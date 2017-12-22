@@ -2,6 +2,7 @@ var startTimer;
 var stopTimer;
 var resetTimer;
 var success = 0;
+var errores = 0;
 var attempts = 0;
 var wordList = [];
 
@@ -24,19 +25,19 @@ function drag(ev) {
 function allowDrop(ev) {
     ev.preventDefault();
 }
-
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     var targetId = ev.target.id;
 
-    if (targetId.replace("_img", "") === data.replace("_word", "")) {
+    if (targetId.replace("_img", "") === data.replace("_word", "")){
         var imageParent = document.getElementById(ev.target.id).parentElement;
         var word = document.getElementById(data);
         var badge = word.children[0];
         success += parseInt(badge.innerText);
         addCounter();
         word.draggable = false;
+        attempts +=1;
 
         var wordClone = word.cloneNode(false);
         var cl = wordClone.getAttribute("class").replace("word_", "done_");
@@ -45,19 +46,21 @@ function drop(ev) {
         wordList.pop();
         imageParent.appendChild(wordClone);
 
-        if (wordList.length === 0) {
+        if (wordList.length === 0){
             nextRound();
         }
-    } else {
+    }
+    else{
         $("#myModal").modal();
         attempts += 1;
+        errores +=1;
     }
 }
 
 function nextRound() {
     var stage = document.getElementById("stage");
     console.log(stage.innerText.toLowerCase());
-    switch (stage.innerText.toLowerCase()) {
+    switch (stage.innerText.toLowerCase()){
         case "first stage: easy":
             stage.innerText = "First stage: Medium";
             randomImageMedium();
@@ -72,19 +75,39 @@ function nextRound() {
             break;
     }
 }
+function nextRoundPractice() {
+    var stage = document.getElementById("stage");
+    console.log(stage.innerText.toLowerCase());
+    switch (stage.innerText.toLowerCase()){
+        case "first stage: easy":
+            stage.innerText = "First stage: Medium";
+            randomImageMedium();
+            resetTimer();
+            break;
+        case "first stage: medium":
+            stage.innerText = "First stage: Hard";
+            randomImageHard();
+            resetTimer();
+            break;
+        case "first stage: hard":
+            
+            break;
+    }
+}
 
 function randomImageEasy() {
     wordList = [];
-    $.getJSON("images/images.json", function(json) {
+    $.getJSON("images/images.json", function (json) {
         var arr = [];
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 6; i++)
+        {
             var x = Math.floor((Math.random() * json.easy.length));
             arr.push(json.easy.splice(x, 1).toString());
         }
 
-        var indexes = [0, 1, 2, 3, 4, 5];
+        var indexes = [0, 1, 2, 3 ,4 ,5];
 
-        arr.forEach(function(t, index) {
+        arr.forEach(function (t, index) {
             var name = t.replace(".jpg", "");
             var img = document.createElement("img");
             img.setAttribute("src", "images/easy/" + t);
@@ -102,21 +125,22 @@ function randomImageEasy() {
             images.innerHTML = "";
             images.appendChild(img);
         });
-    });
-}
-
+    })
+    }
+    
 function randomImageMedium() {
     wordList = [];
-    $.getJSON("images/images.json", function(json) {
+    $.getJSON("images/images.json", function (json) {
         var arr = [];
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 6; i++)
+        {
             var x = Math.floor((Math.random() * json.medium.length));
             arr.push(json.medium.splice(x, 1).toString());
         }
 
         var indexes = [0, 1, 2, 3, 4, 5];
 
-        arr.forEach(function(t, index) {
+        arr.forEach(function (t, index) {
             var name = t.replace(".jpg", "");
             var img = document.createElement("img");
             img.setAttribute("src", "images/medium/" + t);
@@ -138,16 +162,17 @@ function randomImageMedium() {
 
 function randomImageHard() {
     wordList = [];
-    $.getJSON("images/images.json", function(json) {
+    $.getJSON("images/images.json", function (json) {
         var arr = [];
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 6; i++)
+        {
             var x = Math.floor((Math.random() * json.hard.length));
             arr.push(json.hard.splice(x, 1).toString());
         }
 
         var indexes = [0, 1, 2, 3, 4, 5];
 
-        arr.forEach(function(t, index) {
+        arr.forEach(function (t, index) {
             var name = t.replace(".jpg", "");
             var img = document.createElement("img");
             img.setAttribute("src", "images/hard/" + t);
@@ -168,11 +193,11 @@ function randomImageHard() {
 }
 
 window.onload = function() {
-    setTimer(1, 0);
+    setTimer(1 , 0);
     resetTimer();
     startTimer();
-    $('#myModal').on('hide.bs.modal', startTimer);
     $('#myModal').on('show.bs.modal', stopTimer);
+    $('#myModal').on('hide.bs.modal', startTimer);
 };
 
 function setTimer(mins, secs) {
@@ -183,7 +208,7 @@ function setTimer(mins, secs) {
 
     function timer() {
         console.log("start");
-        t = setTimeout(substract, 1000)
+        t = setTimeout(substract,1000)
     }
 
     function substract() {
@@ -191,10 +216,12 @@ function setTimer(mins, secs) {
         if (seconds <= 0 && minutes >= 1) {
             seconds = 59;
             minutes--;
-        } else if (seconds <= 0 && minutes === 0) {
+        }
+        else if (seconds <= 0 && minutes === 0){
             stopTimer();
             nextRound();
-        } else {
+        }
+        else {
             seconds--;
         }
         h1.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);

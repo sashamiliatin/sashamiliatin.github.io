@@ -2,99 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test</title>
+    <title>Play Game</title>
     <link rel="stylesheet" href="style.css"/>
     <script src="myfunctions.js"></script>
-    <script
-            src="https://code.jquery.com/jquery-1.12.4.min.js"
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
             integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
             crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script src="jquery.countdown.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" color="fuchsia">
+<body id="practice">
 
-<body class="test">
-
-<div class="container">
-    <div id="clock"></div>
-    <div class="panel panel-primary" style="display: inherit">
-        <div class="panel-heading">
-            <div class="panel-title pull-left">
-                <h1>First stage :</h1>
-            </div>
-            <div class="panel-title pull-right">counter</div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="panel-body"><h2>Drag and Drop</h2></div>
+<div class="test">
+    <!-- Sidebar -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Home.html">Home</a>
+        <a href="Practice.html">Practice</a>
+        <a href="learn_words.html">Learn Words</a>
+        <a href="About_us.html">About Us</a>
     </div>
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <div class="panel-title pull-left" id="clock1"></div>
-            <div class="panel-title pull-right">Drag the words to the pictures.</div>
-            <div class="clearfix"></div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+    </div>
+    <div class="container">
+        <div class="panel panel-primary" style="display: inherit">
+            <div class="panel-heading">
+                <div class="panel-title pull-left" id="stage">First stage: Easy</div>
+                <div class="panel-title pull-right"> Counter:<div class="panel-title pull-right" id="success">0</div> </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body">Drag and Drop<button onclick="nextRound();" class="btn btn-default pull-right">Next Stage</button></div>
         </div>
+        <div class="panel panel-primary" >
+            <div class="panel-heading">
+                <div class="panel-title pull-right" id="timer"></div>
+                <div class="panel-title pull-left">Drag the words to the pictures.</div>
+                <div class="clearfix"></div>
+            </div>
+            <script>
+                randomImageEasy();
+            </script>
 
-        <script type="text/javascript">
-            var d1 = new Date (),
-                d2 = new Date ( d1 );
-            d2.setSeconds ( d1.getSeconds() + 4 );
-            $('#clock1').countdown(d2).on('update.countdown', function(event) {
-                var $this = $(this).html(event.strftime(''
-                    + '<span>%M</span> : '
-                    + '<span>%S</span>'));
-            });
-
-            $("#myModal").bind('show', $("#clock1").toggle());
-        </script>
-        <script>
-            randomImageEasy();
-        </script>
-        <div class="panel-body">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-7" style="display: block;">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="thumbnail" id="img_0" ondrop="drop(event)" ondragover="allowDrop(event)">
-
+            <div class="panel-body">
+                <div class="container-fluid" aria-dropeffect="move">
+                    <div class="row-4">
+                        <div class="col-md-7" style="display: block;">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="thumbnail img_0" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="thumbnail img_1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                 </div>
                             </div>
-                            <div class="col-md-5">
-                                <div class="thumbnail" id="img_1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="thumbnail img_2" ondrop="drop(event)" ondragover="allowDrop(event)">
 
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="thumbnail img_3" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="thumbnail" id="img_2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="thumbnail img_4" ondrop="drop(event)" ondragover="allowDrop(event)">
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="thumbnail" id="img_3" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <div class="col-md-5">
+                                    <div class="thumbnail img_5" ondrop="drop(event)" ondragover="allowDrop(event)">
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3" style="display: block">
                         <div class="list-group">
-                            <a class="list-group-item list-item" id="word_0" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item" id="word_1" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item" id="word_2" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item" id="word_3" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
+                            <a class="list-group-item list-item word_0" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
+                            <a class="list-group-item list-item word_1" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
+                            <a class="list-group-item list-item word_2" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
+                            <a class="list-group-item list-item word_3" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
+                            <a class="list-group-item list-item word_4" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
+                            <a class="list-group-item list-item word_5" draggable="true" ondragstart="drag(event)"><span class="badge">✓</span></a>
                         </div>
                     </div>
                 </div>
+
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="vertical-alignment-helper">
@@ -102,23 +122,18 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-
                                     </button>
-                                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-
+                                    <h4 class="modal-title" id="myModalLabel">Oops!!</h4>
                                 </div>
-                                <div class="modal-body">...</div>
+                                <div class="modal-body">Please take it easy and try again</div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 </div>

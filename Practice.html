@@ -18,21 +18,46 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" color="fuchsia">
 <body id="practice">
-<div class="test">
+
+<div class="Practice">
+    <!-- Sidebar -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Home.html">Home</a>
+        <a href="test.html">Play Game</a>
+        <a href="learn_words.html">Learn Words</a>
+        <a href="About_us.html">About Us</a>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+    </div>
 <div class="container">
     <div class="panel panel-primary" style="display: inherit">
         <div class="panel-heading">
             <div class="panel-title pull-left" id="stage">First stage: Easy</div>
-            <div class="panel-title pull-right"> Counter:<div class="panel-title pull-right" id="success">0</div> </div>
+            <div class="panel-title pull-right" style="display: none"> Counter:<div class="panel-title pull-right" id="success">0</div> </div>
             <div class="clearfix"></div>
         </div>
         <div class="panel-body">Drag and Drop<button onclick="nextRound();" class="btn btn-default pull-right">Next Stage</button></div>
     </div>
     <div class="panel panel-primary" >
         <div class="panel-heading">
-            <div class="panel-title pull-right" id="timer"></div>
+            <div class="panel-title pull-right"></div>
             <div class="panel-title pull-left">Drag the words to the pictures.</div>
             <div class="clearfix"></div>
         </div>
