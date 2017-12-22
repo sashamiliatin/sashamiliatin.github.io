@@ -44,16 +44,18 @@
     </script>
 
     <div id="main">
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
     </div>
     <div class="container">
         <div class="panel panel-primary" style="display: inherit">
             <div class="panel-heading">
                 <div class="panel-title pull-left" id="stage">First stage: Easy</div>
-                <div class="panel-title pull-right"> Counter:<div class="panel-title pull-right" id="success">0</div> </div>
+
                 <div class="clearfix"></div>
             </div>
-            <div class="panel-body">Drag and Drop<button onclick="nextRound();" class="btn btn-default pull-right">Next Stage</button></div>
+            <div class="panel-body">Drag and Drop
+                <div class="panel-title pull-right"> Counter:<div class="panel-title pull-right" id="success">0</div> </div>
+            </div>
         </div>
         <div class="panel panel-primary" >
             <div class="panel-heading">
@@ -68,38 +70,36 @@
             <div class="panel-body">
                 <div class="container-fluid" aria-dropeffect="move">
                     <div class="row-4">
-                        <div class="col-md-7" style="display: block;">
+                        <div class="col-md-9" style="display: block;">
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <div class="thumbnail img_0" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <div class="thumbnail img_1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <div class="thumbnail img_2" ondrop="drop(event)" ondragover="allowDrop(event)">
-
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="thumbnail img_3" ondrop="drop(event)" ondragover="allowDrop(event)">
-
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-5">
-                                    <div class="thumbnail img_4" ondrop="drop(event)" ondragover="allowDrop(event)">
-
+                                <div class="col-md-4">
+                                    <div class="thumbnail img_3" ondrop="drop(event)" ondragover="allowDrop(event)">
                                     </div>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-4">
+                                    <div class="thumbnail img_4" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="thumbnail img_5" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <br></br>
                             </div>
                         </div>
                     </div>
