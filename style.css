@@ -1,0 +1,64 @@
+.list-item {
+    list-style-type: none;
+    width: 100%;
+    margin: 5px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 3px;
+    cursor: move;
+}
+.food {
+    width: 100% !important;
+    height: 160px!important;
+    min-width: 225px;
+}
+.modal {
+}
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+}
+.h2{
+    font-size: 46px;
+    letter-spacing: 2px;
+    margin: 200px 0 0;
+}
+
+#practice {
+    background-image: url("images/pictures/background.jpeg");
+}
+
+.panel-heading {
+    background: #FFE6F9 !important;
+}
+
+.panel-title {
+    font-family: "Comic Sans MS";
+    font-size: 24px !important;
+    color: #602060 !important;
+}
+
+.panel-body {
+    font-family: "Comic Sans MS";
+    font-size: 24px !important;
+    color: #602060 !important;
+    background: #fbb1ae !important;
+}
+
+.panel-title H2 {
+    color: #602060;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+
+<title>Learn Words</title>
+<head>
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body background="images/pictures/background.jpeg">
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="background:#FFE6F9">
+            <h3 class="panel-title"><font face="Comic sans MS" size ="6" color="#602060">Dictionary</font></h3>
+            <div class="panel-body">
+            <table id="location" class="table table-bordered table striped  table-hover">
+                <thead>
+                <tr id="tr#">
+                    <th><font face="Comic sans MS" size ="6" color="#602060">Word</font></th>
+                    <th><font face="Comic sans MS" size="6" color="602060"> Translation </font> </th>
+                </tr>
+                </thead>
+                <tbody id="table_body" class="tableBody" style="color: #222222">
+
+                </tbody>
+            </table>
+<script type="text/javascript">
+    $.getJSON("csvjson.json", function (json) {
+        var p = document.getElementById("table_body");
+
+        jQuery.each(json[0], function (i, val) {
+            var tr = document.createElement("tr");
+            var td = document.createElement("td");
+            var td1 = document.createElement("td");
+            td.innerText = i;
+            td1.innerText = unescape(val);
+            tr.appendChild(td);
+            tr.appendChild(td1);
+            p.appendChild(tr);
+        });
+    })
+</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+</div>
+</body>
+
+</html>
