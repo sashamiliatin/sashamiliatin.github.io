@@ -1,45 +1,93 @@
 <!DOCTYPE html>
-<html>
-<audio autoplay>
-    <source src="audio/foodyami2.mp3" type="audio/mpeg">
-</audio>
-<title>Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" color="fuchsia">
+<html lang="en">
 
-<body>
+<head>
 
-    <!-- Sidebar -->
-    <div class="w3-sidebar w3-bar-block w3-purple w3-animate-left" style="display:none" id="mySidebar">
-        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-        <a href="learn_words.html" class="w3-bar-item w3-button">Learn words</a>
-        <a href="test.html" class="w3-bar-item w3-button">Play Game</a>
-        <a href="Practice.html" class="w3-bar-item w3-button">Practice</a>
-        <a href="About_us.html" class="w3-bar-item w3-button">About us</a>
-    </div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=yes, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- Page Content -->
-    <div class="w3-teal" style="background: #9c27b0!important;">
-        <button class="w3-button w3-teal  w3-xlarge" style="background: #9c27b0!important;" onclick="w3_open()"> menu </button>
-        <div class="w3-container">
-            <h1 style="color: blueviolet">Food Yami Yami Food</h1>
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <link href="style.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body style="background: #9c27b0!important;">
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" style="background: #9c27b0!important; z-index: 1 !important">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="javascript:void(0)" id="close-menu-toggle" class="closebtn">
+                            &times;
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Learn words</a>
+                </li>
+                <li>
+                    <a href="#">Play Game</a>
+                </li>
+                <li>
+                    <a href="#">Practice</a>
+                </li>
+                <li>
+                    <a href="#">About us</a>
+                </li>
+            </ul>
         </div>
+        <!-- /#sidebar-wrapper -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">&#9776;</a>
+        <!-- Page Content -->
+        <div id="page-content-wrapper" style="background: #9c27b0!important;">
+
+            <img src="images/pictures/k2.jpg" alt="kitchen" style="width:100%; height: 100%">
+            <div class="container-fluid">
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
     </div>
+    <!-- /#wrapper -->
 
-    <img src="images/pictures/k2.jpg" alt="kitchen" style="width:100%">
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
     <script>
-        function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
-        }
-
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-        }
+        $("#menu-toggle").fadeOut();
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+            $("#menu-toggle").fadeOut(1);
+        });
+        $("#close-menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+            $("#menu-toggle").fadeIn();
+        });
     </script>
-    <footer style="background: #9c27b0">
-        <small>&copy; Copyright 2058, Example Corporation</small>
-    </footer>
+
 </body>
 
 </html>
