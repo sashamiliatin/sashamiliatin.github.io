@@ -19,7 +19,7 @@ function myFunction() {
     } else if (x == "hamburger" || x=="pizza" || x=="sushi" || x=="salad" || x=="strawberry") {
         if(S.ans!=x)
         {
-            S.score=S.score+20;
+            score+=20;
         }
         text = "great job!";
     }
@@ -28,7 +28,7 @@ function myFunction() {
         text = "please try again";
     }
     document.getElementById("check").innerHTML = text;
-    document.getElementById("qty").value = S.score;
+    document.getElementById("qty").value = score;
     S.ans=x;
 }
 
