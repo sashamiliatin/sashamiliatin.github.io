@@ -7,6 +7,8 @@ var attempts = 0;
 var wordList = [];
 
 
+
+
 var S = {
     ans:"ans"
 };
