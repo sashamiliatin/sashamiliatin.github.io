@@ -19,7 +19,7 @@ function myFunction() {
     } else if (x == "hamburger" || x=="pizza" || x=="sushi" || x=="salad" || x=="strawberry") {
         if(S.ans!=x)
         {
-            score+=20;
+            score+=40;
         }
         text = "great job!";
     }
