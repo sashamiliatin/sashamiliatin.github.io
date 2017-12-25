@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6ce4f11-0cde-4b45-b930-1ce8d66414f0" name="Default" comment="" />
+    <list default="true" id="e6ce4f11-0cde-4b45-b930-1ce8d66414f0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/myfunctions.js" afterPath="$PROJECT_DIR$/myfunctions.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -37,31 +39,39 @@
       <file leaf-file-name="step_two.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/step_two.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="-135">
+              <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+              <folding>
+                <element signature="n#frameset#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#244#279#0" expanded="false" />
+                <element signature="e#286#424#0" expanded="false" />
+                <element signature="e#432#501#0" expanded="false" />
+                <element signature="e#509#928#0" expanded="false" />
+                <element signature="e#947#1098#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="score.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="score.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/score.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="137">
               <caret line="63" column="13" lean-forward="false" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myfunctions.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="myfunctions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myfunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-662">
-              <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="238">
+              <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
               <folding>
                 <element signature="n#!!block;n#placeholder#0" expanded="false" />
-                <element signature="n#!!block;n#drop#0" expanded="false" />
+                <element signature="n#!!block;n#nextRound#0" expanded="false" />
+                <element signature="n#!!block;n#nextRoundPractice#0" expanded="false" />
                 <element signature="n#!!block;n#randomImageEasy#0" expanded="false" />
                 <element signature="n#!!block;n#randomImageMedium#0" expanded="false" />
                 <element signature="n#!!block;n#randomImageHard#0" expanded="false" />
@@ -86,6 +96,7 @@
       <find>image</find>
       <find>sh</find>
       <find>#sh</find>
+      <find>success</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,7 +116,6 @@
         <option value="$PROJECT_DIR$/explane.html" />
         <option value="$PROJECT_DIR$/Home.html" />
         <option value="$PROJECT_DIR$/learn_words.html" />
-        <option value="$PROJECT_DIR$/myfunctions.js" />
         <option value="$PROJECT_DIR$/Practice.html" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/About_us.html" />
@@ -118,6 +128,7 @@
         <option value="$PROJECT_DIR$/game1.html" />
         <option value="$PROJECT_DIR$/step_two.html" />
         <option value="$PROJECT_DIR$/score.html" />
+        <option value="$PROJECT_DIR$/myfunctions.js" />
       </list>
     </option>
   </component>
@@ -219,12 +230,12 @@
       <workItem from="1513919964077" duration="8084000" />
       <workItem from="1513928855529" duration="3124000" />
       <workItem from="1513936676060" duration="3812000" />
-      <workItem from="1514180515549" duration="3009000" />
+      <workItem from="1514180515549" duration="3495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203401000" />
+    <option name="totallyTimeSpent" value="203887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -302,7 +313,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -345,7 +356,8 @@
           <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding>
             <element signature="n#!!block;n#placeholder#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
+            <element signature="n#!!block;n#nextRound#0" expanded="false" />
+            <element signature="n#!!block;n#nextRoundPractice#0" expanded="false" />
             <element signature="n#!!block;n#randomImageEasy#0" expanded="false" />
             <element signature="n#!!block;n#randomImageMedium#0" expanded="false" />
             <element signature="n#!!block;n#randomImageHard#0" expanded="false" />
@@ -437,7 +449,8 @@
           <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding>
             <element signature="n#!!block;n#placeholder#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
+            <element signature="n#!!block;n#nextRound#0" expanded="false" />
+            <element signature="n#!!block;n#nextRoundPractice#0" expanded="false" />
             <element signature="n#!!block;n#randomImageEasy#0" expanded="false" />
             <element signature="n#!!block;n#randomImageMedium#0" expanded="false" />
             <element signature="n#!!block;n#randomImageHard#0" expanded="false" />
@@ -491,7 +504,8 @@
           <caret line="21" column="61" lean-forward="false" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
           <folding>
             <element signature="n#!!block;n#placeholder#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
+            <element signature="n#!!block;n#nextRound#0" expanded="false" />
+            <element signature="n#!!block;n#nextRoundPractice#0" expanded="false" />
             <element signature="n#!!block;n#randomImageEasy#0" expanded="false" />
             <element signature="n#!!block;n#randomImageMedium#0" expanded="false" />
             <element signature="n#!!block;n#randomImageHard#0" expanded="false" />
@@ -726,20 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myfunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-662">
-          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!block;n#placeholder#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
-            <element signature="n#!!block;n#randomImageEasy#0" expanded="false" />
-            <element signature="n#!!block;n#randomImageMedium#0" expanded="false" />
-            <element signature="n#!!block;n#randomImageHard#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/game6.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -814,17 +814,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/step_two.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="-135">
+          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding>
+            <element signature="n#frameset#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#244#279#0" expanded="false" />
+            <element signature="e#286#424#0" expanded="false" />
+            <element signature="e#432#501#0" expanded="false" />
+            <element signature="e#509#928#0" expanded="false" />
+            <element signature="e#947#1098#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/score.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="137">
           <caret line="63" column="13" lean-forward="false" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myfunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
+          <folding>
+            <element signature="n#!!block;n#placeholder#0" expanded="false" />
+            <element signature="n#!!block;n#nextRound#0" expanded="false" />
+            <element signature="n#!!block;n#nextRoundPractice#0" expanded="false" />
+            <element signature="n#!!block;n#randomImageEasy#0" expanded="false" />
+            <element signature="n#!!block;n#randomImageMedium#0" expanded="false" />
+            <element signature="n#!!block;n#randomImageHard#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
