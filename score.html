@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script type="text/javascript" src="game.js" ></script>
+<style>
+body {
+    font-family: Comic sans MS;
+}
+input {
+	font-size: 2.0em;
+	background-color: purple;
+	text-align: center;
+	border-width: 3;
+	width: 85%;
+	margin: 0 0 .1em 0;
+	color: #fff;
+}
+
+label {
+	display: block;
+	font-size: 2em;
+               color:#602060;
+}
+}
+
+.box {
+	/* basics */
+	background-color: purple;
+	color: purple;
+    text-align: center;
+	/* rounded corners */
+    -webkit-border-radius: 15px;
+    border-radius: 12px; 
+    -moz-background-clip: padding: 15px 15px; -webkit-background-clip: padding-box; background-clip: padding-box:5px 5px;;
+    width: 15em;
+	margin: 0 auto;	
+  	-webkit-box-shadow: 0px 0px 12px 0px pink;
+    box-shadow: 0px 0px 12px 0px pink;
+  
+}
+h1,h2,h3{background: #ffe6f9;
+padding: 2px 2px 2px 2px;
+font-family:"Comic sans MS";} 
+body{
+background-image: url("img/b1.jpg");}
+</style>
+    <meta charset="UTF-8">
+    <title>game</title>
+</head>
+</br></br></br></br></br></br></br></br>
+<center>
+<div class="box">    
+        <label for="qty"><abbr title="Quantity">Score :</abbr></label>
+        <input id="qty" value="0" />
+    </div>
+<h3 style="color: #602060"> what was it ? </h3>
+<input id="ans">
+</br>
+<button type="submit"  onclick="myFunction()">send
+   <h3 id="check"></h3>
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
