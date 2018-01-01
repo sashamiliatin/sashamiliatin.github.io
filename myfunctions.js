@@ -71,6 +71,8 @@ function drop(ev) {
         var cl = wordClone.getAttribute("class").replace("word_", "done_");
         wordClone.setAttribute("class", cl);
         wordClone.innerText = data.replace("_word", "");
+        word.style.textDecoration = "line-through";
+        badge.style.backgroundColor="#00cc00"
         wordList.pop();
         imageParent.appendChild(wordClone);
 
