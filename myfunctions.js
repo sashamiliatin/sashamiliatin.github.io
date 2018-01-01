@@ -222,7 +222,7 @@ function randomImageHard() {
 }
 
 window.onload = function() {
-    setTimer(1 , 0);
+    setTimer(0 , 45);
     resetTimer();
     startTimer();
     $('#myModal').on('show.bs.modal', stopTimer);
@@ -275,4 +275,14 @@ function setTimer(mins, secs) {
         var secondsHtml = (seconds > 9 ? seconds : "0" + seconds);
         h1.textContent = minutesHtml + ":" + secondsHtml;
     };
+}
+
+function WriteUsers(user , score1 , errors1 , attempts1) {
+    var jsonfile = require('jsonfile');
+    var file = 'user.json'
+    var obj = {name: user, score: score1,errore: errors1,attemts: attempts1}
+    jsonfile.writeFile(file, obj, function (err) {
+        console.error(err)
+    })
+
 }
