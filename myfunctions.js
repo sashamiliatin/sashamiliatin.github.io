@@ -315,12 +315,6 @@ function setTimer(mins, secs) {
     };
 }
 
-function WriteUsers(user , score1 , errors1 , attempts1) {
-    var jsonfile = require('jsonfile');
-    var file = 'user.json'
-    var obj = {name: user, score: score1,errore: errors1,attemts: attempts1}
-    jsonfile.writeFile(file, obj, function (err) {
-        console.error(err)
-    })
-
+function WriteUsers(user ) {
+  localStorage.setItem("Username",user)
 }
