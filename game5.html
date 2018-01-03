@@ -1,30 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-  var score=0;
-function myFunction2() 
-{
- var text;
-var ans1= document.getElementById('1').checked;
-var ans2= document.getElementById('2').checked;
-var ans3= document.getElementById('3').checked;
-var ans4= document.getElementById('4').checked;
-        if(ans4==true)
-{
- score += 20; 
-text="great job!"
-}
-   else if(ans1==false && ans2==false && ans3==false && ans4==false)
-{   
-        text="please enter answer";
-}
-   else 
-{ text = "please try again";}  
-    document.getElementById("check").innerHTML = text;
-    document.getElementById('qty').value = score;
-}
-</script>
+<script type="text/javascript" src="game.js" ></script>
 <style>
 body {
     font-family: Comic sans MS;
@@ -88,20 +65,9 @@ background-image: url("images/pictures/background.jpeg");}
 <h1 style="color: #602060"><center><b>videos:</b></center></h1>
 <center>
 <object width="620" height="350" data="video/video1.webm" controls border="2"></object>
-<h2  style="color: #602060"> Which food we didn't see in the video?</h2>
-<p class="dotted"><b><form  onsubmit="return false">
-        <input type="radio" id="1" name="food"> Pizza<br/>
-        <input type="radio" id="2" name="food" /> Hot dog<br/>
-       <input type="radio"  id="3" name="food"/> chicken<br/>
-        <input type="radio" id="4" name="food"/> Eggs<br/>
-</form>
-</b>
-</p>
-        <button type="submit" value="submit" onclick="myFunction2()">send
-<h3 id="check"></h3>
-</form>
-</button>
-</br></br><a href="game6.html" target="next">next stage &rarr;</a>
+<h2  style="color: #602060"><b><u> Which food we didn't see in the video?</u></b></h2>
+<h3 style="color: purple"> pizza / hot dog / chicken  / eggs </br></h3>
+<a href="game6.html" target="next">next stage &rarr;</a>
 </center>
   </div>
 </div>

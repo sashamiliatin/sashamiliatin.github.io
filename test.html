@@ -17,9 +17,11 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" color="fuchsia">
+
 <body id="practice">
 
 <div class="test">
@@ -27,7 +29,7 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="Home.html">Home</a>
-        <a href="Practice.html">Practice</a>
+        <a href="explane.html">Practice</a>
         <a href="learn_words.html">Learn Words</a>
         <a href="About_us.html">About Us</a>
     </div>
@@ -70,7 +72,7 @@
             <div class="panel-body">
                 <div class="container-fluid" aria-dropeffect="move">
                     <div class="row-4">
-                        <div class="col-md-9" style="display: block;">
+                        <div class="col-md-9" id="img_list" style="display: block;">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="thumbnail img_0" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -104,13 +106,7 @@
                         </div>
                     </div>
                     <div class="col-sm-3" style="display: block">
-                        <div class="list-group">
-                            <a class="list-group-item list-item word_0" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_1" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_2" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_3" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_4" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_5" draggable="true" ondragstart="drag(event)"><span class="badge">✓</span></a>
+                        <div class="list-group" id="word_list">
                         </div>
                     </div>
                 </div>

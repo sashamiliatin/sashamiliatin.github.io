@@ -68,7 +68,7 @@
         <div class="panel-body">
             <div class="container-fluid" aria-dropeffect="move">
                 <div class="row-4">
-                    <div class="col-md-9" style="display: block;">
+                    <div class="col-md-9" id="img_list" style="display: block;">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="thumbnail img_0" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -78,7 +78,6 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="thumbnail img_2" ondrop="drop(event)" ondragover="allowDrop(event)">
-
                                 </div>
                             </div>
                         </div>
@@ -89,7 +88,6 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="thumbnail img_4" ondrop="drop(event)" ondragover="allowDrop(event)">
-
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -97,20 +95,17 @@
 
                                 </div>
                             </div>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-3" style="display: block">
-                        <div class="list-group">
-                            <a class="list-group-item list-item word_0" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_1" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_2" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_3" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_4" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
-                            <a class="list-group-item list-item word_5" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>
+                        <div class="row">
+                            <br></br>
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-3" style="display: block">
+                    <div class="list-group" id="word_list">
+                    </div>
+                </div>
+            </div>
 
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -18,9 +18,13 @@ function myFunction() {
     if (x == null || x == "") {
         text = "please enter an answer";
         document.getElementById("ans").focus();
-    } else if (x == "hamburger" || x=="pizza" || x=="sushi" || x=="salad" || x=="strawberry") {
+    } else if (x == "hamburger" || x=="pizza" || x=="sushi" || x=="salad" || x=="strawberry" || x=="eggs" || x=="cut") {
         if(S.ans!=x)
         {
+            var m = document.createElement("AUDIO");
+            m.setAttribute("src","audio/claps.mp3");
+            document.body.appendChild(m);
+            m.play();
             score+=40;
         }
         text = "great job!";
@@ -147,18 +151,39 @@ function randomImageEasy() {
             var x = Math.floor((Math.random() * indexes.length));
             var ind = indexes.splice(x, 1).toString();
 
-            var word = document.getElementsByClassName("word_" + ind)[0];
             wordList.push(name);
             img.setAttribute("id", name + "_img");
-            word.setAttribute("id", name + "_word");
-            word.draggable = true;
-            word.innerHTML = name + "<span class=\"badge\">10</span>";
+
             images.innerHTML = "";
             images.appendChild(img);
         });
-    })
+
+        renderWordList(shuffleArray(wordList), 10);
+    });
+}
+
+    function renderWordList(wordList, score) {
+
+        var listDiv = document.getElementById("word_list");
+        listDiv.innerHTML = "";
+
+        wordList.forEach(function (value, index) {
+            var element = document.createElement("a");
+            element.setAttribute("class", "list-group-item list-item word_" + index);
+            element.setAttribute("id", value + "_word");
+            element.draggable = true;
+            element.ondragstart = drag;
+            element.innerHTML = value + '<span class="badge">' + score + '</span>';
+            listDiv.appendChild(element);
+        });
+       // var a = <a class="list-group-item list-item word_0" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>;
     }
-    
+
+
+    function renderWideoList() {
+
+
+    }
 function randomImageMedium() {
     wordList = [];
     $.getJSON("images/images.json", function (json) {
@@ -180,15 +205,14 @@ function randomImageMedium() {
             var x = Math.floor((Math.random() * indexes.length));
             var ind = indexes.splice(x, 1).toString();
             wordList.push(name);
-            var word = document.getElementsByClassName("word_" + ind)[0];
             img.setAttribute("id", name + "_img");
-            word.setAttribute("id", name + "_word");
-            word.draggable = true;
-            word.innerHTML = name + "<span class=\"badge\">20</span>";
+
             images.innerHTML = "";
             images.appendChild(img);
         });
-    })
+
+        renderWordList(shuffleArray(wordList), 20);
+    });
 }
 
 function randomImageHard() {
@@ -220,7 +244,19 @@ function randomImageHard() {
             images.innerHTML = "";
             images.appendChild(img);
         });
-    })
+
+        renderWordList(shuffleArray(wordList), 30);
+    });
+}
+
+function shuffleArray(d) {
+    for (var c = d.length - 1; c > 0; c--) {
+        var b = Math.floor(Math.random() * (c + 1));
+        var a = d[c];
+        d[c] = d[b];
+        d[b] = a;
+    }
+    return d
 }
 
 window.onload = function() {

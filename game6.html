@@ -1,30 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-  var score=0;
-function myFunction2() 
-{
- var text;
-var ans1= document.getElementById('1').checked;
-var ans2= document.getElementById('2').checked;
-var ans3= document.getElementById('3').checked;
-var ans4= document.getElementById('4').checked;
-        if(ans3==true)
-{
- score += 20; 
-text="great job!"
-}
-   else if(ans1==false && ans2==false && ans3==false && ans4==false)
-{   
-        text="please enter answer";
-}
-   else 
-{ text = "please try again";}  
-    document.getElementById("check").innerHTML = text;
-    document.getElementById('qty').value = score;
-}
-</script>
+<script type="text/javascript" src="game.js" ></script>
 <style>
 body {
     font-family: Comic sans MS;
@@ -44,6 +21,7 @@ label {
 	font-size: 1.5em;
                color:#602060;
 }
+
 
 .box {
 	/* basics */
@@ -88,16 +66,7 @@ background-image: url("images/pictures/background.jpeg");}
 <center>
 <object width="620" height="350" data="video/video2.webm" controls border="2"></object>
 <h2  style="color: #602060"> What the girl  didn't do in the video?</h2>
-<p class="dotted"><b><form  onsubmit="return false">
-        <input type="radio" id="1" name="food"> Bake <br/>
-        <input type="radio" id="2" name="food" />Mix<br/>
-       <input type="radio"  id="3" name="food"/> Cut<br/>
-        <input type="radio" id="4" name="food"/> Pour<br/>
-</form>
-</b></p>
-        <button type="submit" value="submit" onclick="myFunction2()">send
-<h3 id="check"></h3>
-</button>
+<h3 style="color: purple">bake / mix / cut  / pour </br></h3>
 </center>
   </div>
 </div>

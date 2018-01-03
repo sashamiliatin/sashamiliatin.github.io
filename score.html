@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
+    <meta charset="utf-8" />
  <script type="text/javascript" src="myfunctions.js" ></script>
 <style>
 body {
@@ -31,14 +32,26 @@ label {
 	/* rounded corners */
     -webkit-border-radius: 15px;
     border-radius: 12px; 
-    -moz-background-clip: padding ;
+    -moz-background-clip: padding 15px 15px;
     -webkit-background-clip: padding-box;
-    background-clip: padding-box;
+    background-clip: padding-box:5px 5px;;
     width: 15em;
 	margin: 0 auto;	
   	-webkit-box-shadow: 0px 0px 12px 0px pink;
     box-shadow: 0px 0px 12px 0px pink;
   
+}
+button {
+    background-color: #ffe6ff;
+    border-radius: 45px;
+    color: purple;
+    padding:10px 20px;
+    text-decoration: none;
+    font-family: Comic sans MS;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 2px 2px;
+
 }
 h1,h2,h3{background: #ffe6f9;
 padding: 2px 2px 2px 2px;
@@ -53,17 +66,15 @@ background-image: url("images/pictures/background.jpeg");}
 <center>
 <div class="box">    
         <label for="qty"><abbr title="Quantity">Score :</abbr></label>
-        <input id="qty" />
+        <input id="qty" value="0" />
     </div>
-<h3 style="color: #602060"> what was it ? </h3>
+<h3 style="color: #602060"> what is  it ? </h3>
 <input id="ans">
-</center>
-<center>
-    <button  type="submit"  onclick="myFunction()">send
-        <h3 id="check"></h3>
-    </button>
-</center>
-
+<br>
+    <button type="submit" style=""  onclick="myFunction()">send</button>
+   <h3 id="check"></h3>
+    </center>
+  </div>
 </div>
 </div>
 </div>
