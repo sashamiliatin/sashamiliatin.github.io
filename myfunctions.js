@@ -323,7 +323,7 @@ function writeVideoHtml() {
         type: "GET",
         url: "test_video.html",
         success: function(text) {
-            body.innerHTML = test;
+            body.innerHTML = text;
         },
         error: function() {
             // An error occurred
