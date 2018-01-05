@@ -321,7 +321,7 @@ function writeVideoHtml() {
 
     $.ajax({
         type: "GET",
-        url: "test_word.html",
+        url: "test_video.html",
         success: function(text) {
             body.innerHTML = test;
         },
