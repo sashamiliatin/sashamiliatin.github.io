@@ -261,6 +261,7 @@ window.onload = function() {
     setTimer(0, 45);
     resetTimer();
     renderTestBody("words");
+    randomImageEasy();
 };
 
 function setTimer(mins, secs) {
