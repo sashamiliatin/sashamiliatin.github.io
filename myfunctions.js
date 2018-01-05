@@ -6,9 +6,6 @@ var errores = 0;
 var attempts = 0;
 var wordList = [];
 
-
-
-
 var S = {
     ans: "ans"
 };
@@ -98,14 +95,17 @@ function nextRound() {
             stage.innerText = "First stage: Medium";
             randomImageMedium();
             resetTimer();
+            startTimer();
             break;
         case "first stage: medium":
             stage.innerText = "First stage: Hard";
             randomImageHard();
             resetTimer();
+            startTimer();
             break;
         case "first stage: hard":
-            window.open('step_two.html', '_self', false);
+            stopTimer();
+            renderTestBody("video_1");
             break;
     }
 }
@@ -176,12 +176,6 @@ function renderWordList(wordList, score) {
         listDiv.appendChild(element);
     });
     // var a = <a class="list-group-item list-item word_0" draggable="true" ondragstart="drag(event)"><span class="badge">30</span></a>;
-}
-
-
-function renderWideoList() {
-
-
 }
 
 function randomImageMedium() {
@@ -258,10 +252,9 @@ function shuffleArray(d) {
 }
 
 window.onload = function() {
-    setTimer(0, 45);
+    setTimer(0, 1);
     resetTimer();
     renderTestBody("words");
-    randomImageEasy();
 };
 
 function setTimer(mins, secs) {
@@ -272,7 +265,7 @@ function setTimer(mins, secs) {
 
     function timer() {
         console.log("start");
-        t = setTimeout(substract, 1000)
+        t = setTimeout(substract, 1000);
     }
 
     function substract() {
@@ -283,6 +276,7 @@ function setTimer(mins, secs) {
         } else if (seconds <= 0 && minutes === 0) {
             stopTimer();
             nextRound();
+            return;
         } else {
             seconds--;
         }
@@ -349,12 +343,26 @@ function changeTitles(test) {
             $('#myModal').on('hide.bs.modal', startTimer);
             break;
         case "video_1":
-            writeVideoHtml("test_video2");
-            changeTitles(test);
+            var stage = document.getElementById("stage");
+            var panelTitle = document.getElementById("panel_title");
+            var actionTitle = document.getElementById("action_title");
+            var timer = document.getElementById("timer");
+            timer.innerHTML = "";
+            timer.innerHTML = '<button onclick="nextVideo();" class="btn btn-default">NEXT</button>';
+            stage.innerText = "Second stage";
+            panelTitle.innerText = "Video";
+            actionTitle.innerText = "Watch the video and write the food you saw!";
             break;
         case "video_2":
-            writeVideoHtml("test_video");
-            changeTitles(test);
+            stopTimer();
+            var stage = document.getElementById("stage");
+            var panelTitle = document.getElementById("panel_title");
+            var actionTitle = document.getElementById("action_title");
+            var timer = document.getElementById("timer");
+            timer.innerHTML = '<button onclick="nextVideo();" class="btn btn-default">NEXT</button>';
+            stage.innerText = "Second stage";
+            panelTitle.innerText = "Video";
+            actionTitle.innerText = "Watch the video and choose the correct answer!";
             break;
         default:
             break;
