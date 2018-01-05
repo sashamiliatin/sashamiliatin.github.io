@@ -254,15 +254,13 @@ function shuffleArray(d) {
         d[c] = d[b];
         d[b] = a;
     }
-    return d
+    return d;
 }
 
 window.onload = function() {
     setTimer(0, 45);
     resetTimer();
-    startTimer();
-    $('#myModal').on('show.bs.modal', stopTimer);
-    $('#myModal').on('hide.bs.modal', startTimer);
+    renderTestBody("words");
 };
 
 function setTimer(mins, secs) {
@@ -315,15 +313,62 @@ function WriteUsers(user) {
     localStorage.setItem("Username", user)
 }
 
-function writeVideoHtml() {
+function renderTestBody(test) {
+    switch (test) {
+        case "words":
+            changeTitles(test);
+            writeVideoHtml("test_word");
+            break;
+        case "video_1":
+            writeVideoHtml("test_video2");
+            changeTitles(test);
+            break;
+        case "video_2":
+            writeVideoHtml("test_video");
+            changeTitles(test);
+            break;
+        default:
+            break;
+    }
+}
+
+function changeTitles(test) {
+    switch (test) {
+        case "words":
+            var stage = document.getElementById("stage");
+            var panelTitle = document.getElementById("panel_title");
+            var actionTitle = document.getElementById("action_title");
+            var timer = document.getElementById("timer");
+            timer.innerHTML = "";
+            stage.innerText = "First stage: Easy";
+            panelTitle.innerText = "Drag and Drop";
+            actionTitle.innerText = "Drag the words to the pictures.";
+            startTimer();
+            $('#myModal').on('show.bs.modal', stopTimer);
+            $('#myModal').on('hide.bs.modal', startTimer);
+            break;
+        case "video_1":
+            writeVideoHtml("test_video2");
+            changeTitles(test);
+            break;
+        case "video_2":
+            writeVideoHtml("test_video");
+            changeTitles(test);
+            break;
+        default:
+            break;
+    }
+}
+
+function writeVideoHtml(file) {
     var body = document.getElementById("body_row");
     body.innerHTML = "";
 
     $.ajax({
         type: "GET",
-        url: "test_video.html",
+        url: file,
         success: function(text) {
-            body.innerHTML = text;
+            body.innerHTML = test;
         },
         error: function() {
             // An error occurred
