@@ -40,7 +40,8 @@ function myFunction() {
         var letters = document.getElementById("tip");
         video.setAttribute("src", "video/" + v);
         letters.innerHTML = '<u>the letters:</u>' + " " + l + " ";
-        video.load();
+        var v_tag = document.getElementById("video_tag");
+        v_tag.load();
     } else {
         $("#myModal").modal();
     }
