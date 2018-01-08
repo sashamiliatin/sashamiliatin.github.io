@@ -235,7 +235,7 @@ function randomImageEasy() {
             wordList.push(name);
             img.setAttribute("id", name + "_img");
 
-            //images.innerHTML = "";
+            images.innerHTML = "";
             images.appendChild(img);
         });
 
@@ -336,7 +336,7 @@ function shuffleArray(d) {
 window.onload = function() {
     setTimer(0, 45);
     resetTimer();
-    renderTestBody("words");
+    //renderTestBody("words");
 };
 
 function setTimer(mins, secs) {
