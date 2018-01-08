@@ -53,6 +53,10 @@ function whatIsIt() {
     return false;
 }
 
+function whatIsNotInVideo() {
+    alert($("#video_form input[type='radio']:checked").val());
+}
+
 function addCounter() {
     document.getElementById('score').innerText = score;
 }
