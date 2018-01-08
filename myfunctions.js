@@ -10,8 +10,6 @@ var S = {
     ans: "ans"
 };
 
-$('#video_form').submit(myFunction);
-
 function myFunction() {
     var x, text;
     var videoSrc = document.getElementById("video").getAttribute("src").value.replace("video/", "").replace(".webm", "");
@@ -252,6 +250,8 @@ window.onload = function() {
     setTimer(0, 1);
     resetTimer();
     renderTestBody("words");
+    
+$('#video_form').submit(myFunction);
 };
 
 function setTimer(mins, secs) {
