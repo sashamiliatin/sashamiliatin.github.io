@@ -340,7 +340,7 @@ window.onload = function() {
     setTimer(2, 0);
     resetTimer();
     startTimer();
-    randomImageEasy//renderTestBody("words");
+   //renderTestBody("words");
 };
 
 function setTimer(mins, secs) {
