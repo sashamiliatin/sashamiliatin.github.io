@@ -17,6 +17,8 @@ var S = {
     ans: "ans"
 };
 
+$('#video_form').submit(myFunction);
+
 function myFunction() {
     var x, text;
     var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
@@ -39,7 +41,8 @@ function myFunction() {
         var video = document.getElementById("video");
         var letters = document.getElementById("tip");
         video.setAttribute("src", "video/" + v);
-        letters.innerText = " " + l + " ";
+        letters.innerHTML = '<u>the letters:</u>' + " " + l + " ";
+        video.load();
     } else {
         $("#myModal").modal();
     }
