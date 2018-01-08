@@ -12,7 +12,7 @@ var S = {
 
 function myFunction() {
     var x, text;
-    var videoSrc = document.getElementById("video").getAttribute("src").value.replace("video/", "").replace(".webm", "");
+    var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
     var answer = document.getElementById("what_is_it").value;
     console.log(answer);
     console.log(videoSrc);
