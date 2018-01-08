@@ -106,7 +106,7 @@ function whatIsNotInVideo(ev) {
         var h = document.getElementById('modal_text');
         h.innerText = "Game Over!\nYour score: " + score;
         $('#myModal').on('hide.bs.modal', function() {
-            windows.open("home.html", "_self");
+            window.open("Home.html", "_self");
         });
         $("#myModal").modal();
     } else {
