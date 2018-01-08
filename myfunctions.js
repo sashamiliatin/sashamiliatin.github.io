@@ -36,7 +36,7 @@ function myFunction() {
 
         var v = Object.keys(videos)[0];
         var l = Object.values(videos)[0];
-        delete videos[key];
+        delete videos[v];
         var video = document.getElementById("video");
         var letters = document.getElementById("tip");
         video.setAttribute("src", "video/" + v);
