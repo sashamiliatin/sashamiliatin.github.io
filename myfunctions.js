@@ -54,6 +54,34 @@ function whatIsIt(ev) {
     return false;
 }
 
+function nextVideo(ev) {
+    ev.preventDefault();
+    var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
+
+    if (videoSrc === "video1") {
+        renderTestBody("video_3");
+    } else {
+        if (Object.keys(videos).length === 0) {
+            renderTestBody("video_2");
+            return false;
+        }
+
+        var v = Object.keys(videos)[0];
+        var l = Object.values(videos)[0];
+        delete videos[v];
+        var video = document.getElementById("video");
+        var letters = document.getElementById("tip");
+        video.setAttribute("src", "video/" + v);
+        letters.innerHTML = '<u>the letters:</u>' + " " + l + " ";
+        var v_tag = document.getElementById("video_tag");
+        v_tag.load();
+        document.getElementById("what_is_it").value = "";
+    }
+
+
+    return false;
+}
+
 function whatIsNotInVideo(ev) {
     ev.preventDefault();
     var chk = document.querySelector('input[name="optradio"]:checked').value;
@@ -121,7 +149,7 @@ function drop(ev) {
         wordClone.setAttribute("class", cl);
         wordClone.innerText = data.replace("_word", "");
         word.style.textDecoration = "line-through";
-        badge.style.backgroundColor = "#00cc00"
+        badge.style.backgroundColor = "#00cc00";
         wordList.pop();
         imageParent.appendChild(wordClone);
 
@@ -173,7 +201,7 @@ function nextRoundPractice() {
             resetTimer();
             break;
         case "first stage: hard":
-            window.open("step_two.html","_self");
+
             break;
     }
 }
@@ -371,6 +399,7 @@ function renderTestBody(test) {
             changeTitles(test);
             break;
         case "video_3":
+            changeTitles(test);
             writeVideoHtml("test_video3");
             break;
         default:
@@ -399,7 +428,7 @@ function changeTitles(test) {
             var actionTitle = document.getElementById("action_title");
             var timer = document.getElementById("timer");
             timer.innerHTML = "";
-            timer.innerHTML = '<button onclick="nextVideo();" class="btn btn-default">NEXT</button>';
+            timer.innerHTML = '<button onclick="nextVideo(event);" class="btn btn-default">NEXT</button>';
             stage.innerText = "Second stage";
             panelTitle.innerText = "Video";
             actionTitle.innerText = "Watch the video and write the food you saw!";
@@ -410,10 +439,14 @@ function changeTitles(test) {
             var panelTitle = document.getElementById("panel_title");
             var actionTitle = document.getElementById("action_title");
             var timer = document.getElementById("timer");
-            timer.innerHTML = '<button onclick="nextVideo();" class="btn btn-default">NEXT</button>';
+            timer.innerHTML = '<button onclick="nextVideo(event);" class="btn btn-default">NEXT</button>';
             stage.innerText = "Second stage";
             panelTitle.innerText = "Video";
             actionTitle.innerText = "Watch the video and choose the correct answer!";
+            break;
+        case "video_3":
+            var timer = document.getElementById("timer");
+            timer.innerHTML = "";
             break;
         default:
             break;
