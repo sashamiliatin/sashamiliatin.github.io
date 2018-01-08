@@ -6,17 +6,24 @@ var errores = 0;
 var attempts = 0;
 var wordList = [];
 
+var videos = {
+    "pizza.webm": "z , a , z , p , i",
+    "salad.webm": "a , s , a , d , l",
+    "strawberry.webm": "s , t , a , r , b , e , w , r , r , y",
+    "sushi.webm": "i, s, u, h, s"
+};
+
 var S = {
     ans: "ans"
 };
+
+$('#video_form').submit(myFunction);
 
 function myFunction() {
     var x, text;
     var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
     var answer = document.getElementById("what_is_it").value;
-    console.log(answer);
-    console.log(videoSrc);
-    
+
     if (answer === videoSrc) {
         var m = document.createElement("AUDIO");
         m.setAttribute("src", "audio/claps.mp3");
@@ -24,10 +31,22 @@ function myFunction() {
         m.play();
         score += 40;
         addCounter();
+
+        if (Object.keys(videos).length === 0) {
+            return false;
+        }
+
+        var v = Object.keys(videos)[0];
+        var l = Object.values(videos)[0];
+        var video = document.getElementById("video");
+        var letters = document.getElementById("tip");
+        video.setAttribute("src", "video/" + v);
+        letters.innerText = " " + l + " ";
     } else {
-        document.getElementById("what_is_it").value = "";
-        $("#myModal").modal();        
+        $("#myModal").modal();
     }
+
+    document.getElementById("what_is_it").value = "";
 
     return false;
 }
@@ -253,8 +272,6 @@ window.onload = function() {
     setTimer(0, 1);
     resetTimer();
     renderTestBody("words");
-    
-$('#video_form').submit(myFunction);
 };
 
 function setTimer(mins, secs) {
