@@ -25,8 +25,8 @@ function myFunction() {
         score += 40;
         addCounter();
     } else {
-        $("#myModal").modal();
-        answer = "";
+        document.getElementById("what_is_it").value = "";
+        $("#myModal").modal();        
     }
 
     return false;
