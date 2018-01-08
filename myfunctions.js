@@ -235,7 +235,7 @@ function randomImageEasy() {
             wordList.push(name);
             img.setAttribute("id", name + "_img");
 
-            images.innerHTML = "";
+            //images.innerHTML = "";
             images.appendChild(img);
         });
 
