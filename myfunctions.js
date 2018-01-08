@@ -339,7 +339,8 @@ function shuffleArray(d) {
 window.onload = function() {
     setTimer(2, 0);
     resetTimer();
-    renderTestBody("words");
+    startTimer();
+    randomImageEasy//renderTestBody("words");
 };
 
 function setTimer(mins, secs) {
