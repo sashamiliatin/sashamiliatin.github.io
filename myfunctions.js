@@ -31,7 +31,7 @@ function whatIsIt() {
         addCounter();
 
         if (Object.keys(videos).length === 0) {
-            renderTestBody("test_video");
+            renderTestBody("video_2");
             return false;
         }
 
