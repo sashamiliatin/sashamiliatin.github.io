@@ -1,23 +1,23 @@
 <div class="row" id="body_row">
-    <div class="col-lg-7" style="display: block;">
+    <div class="col-lg-7" id="video" style="display: block;">
         <video width="600" height="350" controls>
-            <source  id="video" src="video/hamburger.webm" type="video/webm">
+            <source src="video/hamburger.webm" type="video/webm">
         </video>
     </div>
 
     <div class="col-lg-2 ">
         <div class="left ">
             <img class="image " height="60% " width="60% " src="images/pictures/tip.jpg">
-            <p style="color: #602060 "><u>the letters:</u> h , m , a , r , e , g , r , b , u
+            <p id="tip" style="color: #602060 "><u>the letters:</u> h , m , a , r , e , g , r , b , u
             </p>
         </div>
     </div>
     <div class="col-lg-3 center ">
-        <form id="video_form" action="#">
+        <form id="video_form">
             <div class="form-group ">
                 <label for="what_is_it ">What is it?:</label>
                 <input type="text" class="form-control" id="what_is_it">
-                <button class="submit btn btn-default" onclick="myFunction();">SEND</button>
+                <button type="submit" class="submit btn btn-default">SEND</button>
             </div>
         </form>
     </div>
