@@ -54,7 +54,9 @@ function whatIsIt() {
 }
 
 function whatIsNotInVideo() {
-    alert($("#video_form input[type='radio']:checked").val());
+    preventDefault();
+    alert(document.querySelector('input[name="radio"]:checked').value);
+    return false;
 }
 
 function addCounter() {
