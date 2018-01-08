@@ -433,6 +433,7 @@ function changeTitles(test) {
             $('#myModal').on('hide.bs.modal', startTimer);
             break;
         case "video_1":
+            stopTimer();
             var stage = document.getElementById("stage");
             var panelTitle = document.getElementById("panel_title");
             var actionTitle = document.getElementById("action_title");
