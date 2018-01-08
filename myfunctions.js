@@ -12,26 +12,19 @@ var S = {
 
 function myFunction() {
     var x, text;
-    x = document.getElementById("ans").value;
-    if (x == null || x == "") {
-        text = "please enter an answer";
-        document.getElementById("ans").focus();
-    } else if (x == "hamburger" || x == "pizza" || x == "sushi" || x == "salad" || x == "strawberry" || x == "eggs" || x == "cut") {
-        if (S.ans != x) {
-            var m = document.createElement("AUDIO");
-            m.setAttribute("src", "audio/claps.mp3");
-            document.body.appendChild(m);
-            m.play();
-            score += 40;
-        }
-        text = "great job!";
+    var videoSrc = document.getElementById("video").getAttribute("src").value.replace("video/", "").replace(".webm", "");
+    var answer = document.getElementById("what_is_it").value;
+
+    if (answer === videoSrc) {
+        var m = document.createElement("AUDIO");
+        m.setAttribute("src", "audio/claps.mp3");
+        document.body.appendChild(m);
+        m.play();
+        score += 40;
+        addCounter();
     } else {
-        document.getElementById("ans").focus();
-        text = "please try again";
+        //TODO
     }
-    document.getElementById("check").innerHTML = text;
-    document.getElementById("qty").value = score;
-    S.ans = x;
 }
 
 function addCounter() {
