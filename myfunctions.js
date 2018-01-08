@@ -56,7 +56,9 @@ function whatIsIt(ev) {
 
 function whatIsNotInVideo(ev) {
     ev.preventDefault();
-    alert(document.querySelector('input[name="radio"]:checked').value);
+    alert(document.querySelector('input[name="optradio"]:checked').value);
+
+
     return false;
 }
 
