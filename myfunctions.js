@@ -213,6 +213,7 @@ function nextRoundPractice() {
 }
 
 function randomImageEasy() {
+    startTimer();
     wordList = [];
     $.getJSON("images/images.json", function(json) {
         var arr = [];
@@ -261,6 +262,7 @@ function renderWordList(wordList, score) {
 }
 
 function randomImageMedium() {
+    startTimer();
     wordList = [];
     $.getJSON("images/images.json", function(json) {
         var arr = [];
@@ -291,6 +293,7 @@ function randomImageMedium() {
 }
 
 function randomImageHard() {
+    startTimer();
     wordList = [];
     $.getJSON("images/images.json", function(json) {
         var arr = [];
