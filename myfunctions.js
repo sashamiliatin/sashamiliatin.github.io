@@ -56,8 +56,28 @@ function whatIsIt(ev) {
 
 function whatIsNotInVideo(ev) {
     ev.preventDefault();
-    alert(document.querySelector('input[name="optradio"]:checked').value);
+    var chk = document.querySelector('input[name="optradio"]:checked').value;
+    var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
 
+    if (videoSrc === "video1" && chk === "eggs") {
+        var m = document.createElement("AUDIO");
+        m.setAttribute("src", "audio/claps.mp3");
+        document.body.appendChild(m);
+        m.play();
+        score += 40;
+        addCounter();
+        renderTestBody("video_3");
+
+    } else if (videoSrc === "video2" && chk === "cut") {
+        var m = document.createElement("AUDIO");
+        m.setAttribute("src", "audio/claps.mp3");
+        document.body.appendChild(m);
+        m.play();
+        score += 40;
+        addCounter();
+    } else {
+        $("#myModal").modal();
+    }
 
     return false;
 }
@@ -349,6 +369,9 @@ function renderTestBody(test) {
         case "video_2":
             writeVideoHtml("test_video");
             changeTitles(test);
+            break;
+        case "video_3":
+            writeVideoHtml("test_video3");
             break;
         default:
             break;
