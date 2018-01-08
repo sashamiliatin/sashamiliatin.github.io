@@ -17,7 +17,7 @@ var S = {
     ans: "ans"
 };
 
-function myFunction() {
+function whatIsIt() {
     var x, text;
     var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
     var answer = document.getElementById("what_is_it").value;
@@ -31,6 +31,7 @@ function myFunction() {
         addCounter();
 
         if (Object.keys(videos).length === 0) {
+            renderTestBody("test_video");
             return false;
         }
 
