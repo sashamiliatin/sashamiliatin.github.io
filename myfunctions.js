@@ -17,7 +17,8 @@ var S = {
     ans: "ans"
 };
 
-function whatIsIt() {
+function whatIsIt(ev) {
+    ev.preventDefault();
     var x, text;
     var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
     var answer = document.getElementById("what_is_it").value;
@@ -53,8 +54,8 @@ function whatIsIt() {
     return false;
 }
 
-function whatIsNotInVideo() {
-    preventDefault();
+function whatIsNotInVideo(ev) {
+    ev.preventDefault();
     alert(document.querySelector('input[name="radio"]:checked').value);
     return false;
 }
