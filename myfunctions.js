@@ -25,7 +25,8 @@ function myFunction() {
         score += 40;
         addCounter();
     } else {
-        //TODO
+        $("#myModal").modal();
+        answer = "";
     }
 
     return false;
