@@ -10,6 +10,8 @@ var S = {
     ans: "ans"
 };
 
+$('#video_form').submit(myFunction);
+
 function myFunction() {
     var x, text;
     var videoSrc = document.getElementById("video").getAttribute("src").value.replace("video/", "").replace(".webm", "");
@@ -25,6 +27,8 @@ function myFunction() {
     } else {
         //TODO
     }
+
+    return false;
 }
 
 function addCounter() {
