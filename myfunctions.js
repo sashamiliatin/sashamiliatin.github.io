@@ -193,7 +193,7 @@ function nextRound() {
 }
 
 function nextRoundPractice() {
-    var stage = document.getElementById("stage");
+    var stage = document.getElementById("practice_stage");
     console.log(stage.innerText.toLowerCase());
     switch (stage.innerText.toLowerCase()) {
         case "first stage: easy":
