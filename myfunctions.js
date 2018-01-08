@@ -336,7 +336,6 @@ function shuffleArray(d) {
 window.onload = function() {
     setTimer(0, 45);
     resetTimer();
-    startTimer();
     //renderTestBody("words");
 };
 
