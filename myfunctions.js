@@ -17,8 +17,6 @@ var S = {
     ans: "ans"
 };
 
-$('#video_form').submit(myFunction);
-
 function myFunction() {
     var x, text;
     var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
