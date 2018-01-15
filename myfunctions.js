@@ -392,6 +392,10 @@ function centerModal() {
 }
 
 window.onload = function() {
+    if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) === "Practice.html") {
+        return randomImageEasy();
+    }
+
     $('#instructions').on('show.bs.modal', centerModal);
     $(window).on("resize", function() {
         $('#instructions:visible').each(centerModal);
