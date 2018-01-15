@@ -207,7 +207,7 @@ function nextRoundPractice() {
             resetTimer();
             break;
         case "first stage: hard":
-            window.open("explane1.html","_self");
+            window.open("inst.html","_self");
             break;
     }
 }
