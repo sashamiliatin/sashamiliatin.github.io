@@ -53,21 +53,17 @@
             <div class="panel-title pull-right" style="display: none"> Counter:<div class="panel-title pull-right" id="score">0</div> </div>
             <div class="clearfix"></div>
         </div>
-        <div class="panel-body">Drag and Drop<button onclick="nextRoundPractice();" class="btn btn-default pull-right">Next Stage</button></div>
+        <div class="panel-body" id="panel_title">Drag and Drop<button onclick="nextRoundPractice();" class="btn btn-default pull-right">Next Stage</button></div>
     </div>
     <div class="panel panel-primary" >
         <div class="panel-heading">
             <div class="panel-title pull-right"></div>
-            <div class="panel-title pull-left">Drag the words to the pictures.</div>
+            <div class="panel-title pull-left" id="action_title">Drag the words to the pictures.</div>
             <div class="clearfix"></div>
         </div>
-        <script>
-            randomImageEasy();
-        </script>
-
         <div class="panel-body">
             <div class="container-fluid" aria-dropeffect="move">
-                <div class="row-4">
+                <div class="row-4" id="body_row">
                     <div class="col-md-9" id="img_list" style="display: block;">
                         <div class="row">
                             <div class="col-md-4">
@@ -100,11 +96,12 @@
                             <br></br>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-3" style="display: block">
-                    <div class="list-group" id="word_list">
+                    <div class="col-sm-3" style="display: block">
+                        <div class="list-group" id="word_list">
+                        </div>
                     </div>
                 </div>
+
             </div>
 
                 <!-- Modal -->
@@ -117,7 +114,7 @@
                                     </button>
                                     <h4 class="modal-title" id="myModalLabel">Oops!!</h4>
                                 </div>
-                                <div class="modal-body">Please take it easy and try again</div>
+                                <div class="modal-body" id="modal_text">Please take it easy and try again</div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
                                 </div>

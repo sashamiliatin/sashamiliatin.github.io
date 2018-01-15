@@ -19,6 +19,11 @@ var S = {
 
 function whatIsIt(ev) {
     ev.preventDefault();
+
+    if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) === "Practice.html") {
+        return whatIsItPractice(ev);
+    }
+
     var x, text;
     var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
     var answer = document.getElementById("what_is_it").value;
@@ -54,8 +59,36 @@ function whatIsIt(ev) {
     return false;
 }
 
+function whatIsItPractice(ev) {
+    ev.preventDefault();
+    var x, text;
+    var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
+    var answer = document.getElementById("what_is_it").value;
+
+    if (answer === videoSrc) {
+        var m = document.createElement("AUDIO");
+        m.setAttribute("src", "audio/claps.mp3");
+        document.body.appendChild(m);
+        m.play();
+        var h = document.getElementById('modal_text');
+        h.innerText = "Practice Over!";
+        $('#myModal').on('hide.bs.modal', function() {
+            window.open("Home.html", "_self");
+        });
+        $("#myModal").modal();
+    } else {
+        $("#myModal").modal();
+    }
+
+    document.getElementById("what_is_it").value = "";
+
+    return false;
+}
+
 function nextVideo(ev) {
     ev.preventDefault();
+
+
     var videoSrc = document.getElementById("video").getAttribute("src").replace("video/", "").replace(".webm", "");
 
     if (videoSrc === "video1") {
@@ -195,17 +228,10 @@ function nextRoundPractice() {
     console.log(stage.innerText.toLowerCase());
     switch (stage.innerText.toLowerCase()) {
         case "first stage: easy":
-            stage.innerText = "First stage: Medium";
-            randomImageMedium();
-            resetTimer();
+            changePracticeTitles("video_1");
+            writeVideoHtml("test_video2.html");
             break;
-        case "first stage: medium":
-            stage.innerText = "First stage: Hard";
-            randomImageHard();
-            resetTimer();
-            break;
-        case "first stage: hard":
-            window.open("inst.html","_self");
+        case "second stage":
             break;
     }
 }
@@ -335,10 +361,17 @@ function shuffleArray(d) {
 }
 
 window.onload = function() {
-    setTimer(0, 15);
-    resetTimer();
-    startTimer();
+    try {
+        setTimer(0, 45);
+        resetTimer();
+    }
+    catch (err) {
+        console.log(err);
+    }
+
    randomImageEasy();
+    $('#myModal').on('show.bs.modal', stopTimer);
+    $('#myModal').on('hide.bs.modal', startTimer);
 };
 
 function setTimer(mins, secs) {
@@ -380,11 +413,13 @@ function setTimer(mins, secs) {
 
     /* Clear button */
     resetTimer = function() {
+        stopTimer();
         seconds = secs;
         minutes = mins;
         var minutesHtml = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00");
         var secondsHtml = (seconds > 9 ? seconds : "0" + seconds);
         h1.textContent = minutesHtml + ":" + secondsHtml;
+        startTimer();
     };
 }
 
@@ -415,21 +450,23 @@ function renderTestBody(test) {
     }
 }
 
-function changeTitles(test) {
+function changePracticeTitles(test) {
     switch (test) {
-        case "words":
-            var stage = document.getElementById("stage");
+        case "video_1":
+            var stage = document.getElementById("practice_stage");
             var panelTitle = document.getElementById("panel_title");
             var actionTitle = document.getElementById("action_title");
-            var timer = document.getElementById("timer");
-            timer.innerHTML = "";
-            stage.innerText = "First stage: Easy";
-            panelTitle.innerText = "Drag and Drop";
-            actionTitle.innerText = "Drag the words to the pictures.";
-            startTimer();
-            $('#myModal').on('show.bs.modal', stopTimer);
-            $('#myModal').on('hide.bs.modal', startTimer);
+            stage.innerText = "Second stage";
+            panelTitle.innerText = "Video";
+            actionTitle.innerText = "Watch the video and write the food you saw!";
             break;
+        default:
+            break;
+    }
+}
+
+function changeTitles(test) {
+    switch (test) {
         case "video_1":
             stopTimer();
             var stage = document.getElementById("stage");
