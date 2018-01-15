@@ -34,7 +34,7 @@ function whatIsIt(ev) {
 
     if (answer === videoSrc) {
         var m = document.createElement("AUDIO");
-        m.setAttribute("src", "audio/claps.mp3");
+        m.setAttribute("src", "audio/claps4.mp3");
         document.body.appendChild(m);
         m.play();
         score += 40;
@@ -71,7 +71,7 @@ function whatIsItPractice(ev) {
 
     if (answer === videoSrc) {
         var m = document.createElement("AUDIO");
-        m.setAttribute("src", "audio/claps.mp3");
+        m.setAttribute("src", "audio/claps4.mp3");
         document.body.appendChild(m);
         m.play();
         var h = document.getElementById('modal_text');
