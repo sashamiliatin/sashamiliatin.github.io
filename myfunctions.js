@@ -218,7 +218,22 @@ function nextRound() {
             break;
         case "first stage: hard":
             stopTimer();
-            renderTestBody("video_1");
+            var img = document.getElementById("menu_img");
+            img.src = "images/pictures/a.png";
+
+            $('#instructions').off('hide.bs.modal');
+
+            $('.modal-dialog').click(function (ev) {
+                ev.preventDefault();
+                $('#instructions').modal('hide');
+            });
+            $('#instructions').on('hide.bs.modal', function () {
+                renderTestBody("video_1");
+                $('#instructions').off('hide.bs.modal');
+            });
+
+            $('#instructions').modal();
+
             break;
     }
 }
@@ -228,8 +243,12 @@ function nextRoundPractice() {
     console.log(stage.innerText.toLowerCase());
     switch (stage.innerText.toLowerCase()) {
         case "first stage: easy":
-            changePracticeTitles("video_1");
-            writeVideoHtml("test_video2.html");
+            $('#instructions').on('hide.bs.modal', function () {
+                changePracticeTitles("video_1");
+                writeVideoHtml("test_video2.html");
+                $('#instructions').off('hide.bs.modal');
+            });
+            $('#instructions').modal();
             break;
         case "second stage":
             break;
@@ -360,18 +379,42 @@ function shuffleArray(d) {
     return d;
 }
 
-window.onload = function() {
-    try {
-        setTimer(0, 45);
-        resetTimer();
-    }
-    catch (err) {
-        console.log(err);
-    }
+function centerModal() {
+    $(this).css('display', 'block');
+    var $dialog = $(this).find(".modal-dialog");
+    var offset = ($(window).height() - $dialog.height()) / 2;
+    // Center modal vertically in window
+    $dialog.css("margin-top", offset);
+}
 
-   randomImageEasy();
-    $('#myModal').on('show.bs.modal', stopTimer);
-    $('#myModal').on('hide.bs.modal', startTimer);
+window.onload = function() {
+    $('#instructions').on('show.bs.modal', centerModal);
+    $(window).on("resize", function() {
+        $('#instructions:visible').each(centerModal);
+    });
+
+    $('#instructions').off('hide.bs.modal');
+    $('#instructions').on('hide.bs.modal', function () {
+        try {
+            setTimer(0, 45);
+            resetTimer();
+        }
+        catch (err) {
+            console.log(err);
+        }
+
+        randomImageEasy();
+        $('#myModal').on('show.bs.modal', stopTimer);
+        $('#myModal').on('hide.bs.modal', startTimer);
+        $('#instructions').off('hide.bs.modal');
+    });
+
+    $('.modal-dialog').click(function (ev) {
+        ev.preventDefault();
+        $('#instructions').modal('hide');
+    });
+
+    $('#instructions').modal();
 };
 
 function setTimer(mins, secs) {

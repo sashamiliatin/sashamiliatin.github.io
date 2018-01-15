@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Explane</title>
     <link rel="stylesheet" href="style.css"/>
-    <script src="myfunctions.js"></script>
+
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
             integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
             crossorigin="anonymous"></script>
@@ -19,20 +19,20 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <style>
-    .vertical-align-center{
+    .vertical-align-center-modal {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 80%;
+        left: 60%;
         transform: translateX(-50%) translateY(-50%);
     }
-    .button {
+
+    .button-modal {
         background-color: #6b3d19;
         border: #fffcfb;
         color: white;
         padding: 15px 32px;
         text-align: center;
         text-decoration: none;
-        display: inline-block;
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
@@ -66,10 +66,37 @@
     <div id="main">
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
     </div>
-    <div class="vertical-align-center">
-        <img src="images/pictures/firstStage.jpg" width="452" height="659">
-        <div><a href="Practice.html" class="button">Lets Practice</a></div>
+    <!-- Modal -->
+    <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="instructionsTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <img src="images/pictures/menu.jpg" class="img-responsive" />
+            </div>
+        </div>
     </div>
+    <script>
+        function centerModal() {
+            $(this).css('display', 'block');
+            var $dialog = $(this).find(".modal-dialog");
+            var offset = ($(window).height() - $dialog.height()) / 2;
+            // Center modal vertically in window
+            $dialog.css("margin-top", offset);
+        }
+
+        $('#instructions').on('show.bs.modal', centerModal);
+        $(window).on("resize", function() {
+            $('#instructions:visible').each(centerModal);
+        });
+        $('#instructions').on('hide.bs.modal', function () {
+            window.open("Practice.html", target="_self");
+            $('#instructions').off('hide.bs.modal');
+        });
+        $('#instructions').click(function (ev) {
+            ev.preventDefault();
+            $('#instructions').modal('hide');
+        });
+        $("#instructions").modal();
+    </script>
 </main>
 </body>
 </html>

@@ -13,7 +13,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        .vertical-align-center-modal {
+            position: absolute;
+            top: 80%;
+            left: 60%;
+            transform: translateX(-50%) translateY(-50%);
+        }
 
+        .button-modal {
+            background-color: #6b3d19;
+            border: #fffcfb;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10%;
+            transform: translateX(95%) translateY(-10%);
+        }
+    </style>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" color="fuchsia">
@@ -129,6 +151,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="instructionsTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <img src="images/pictures/menu.jpg" id="menu_img" class="img-responsive" />
             </div>
         </div>
     </div>
