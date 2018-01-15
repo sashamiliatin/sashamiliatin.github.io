@@ -17,6 +17,10 @@ var S = {
     ans: "ans"
 };
 
+function prevDef(ev) {
+    ev.preventDefault();
+}
+
 function whatIsIt(ev) {
     ev.preventDefault();
 
