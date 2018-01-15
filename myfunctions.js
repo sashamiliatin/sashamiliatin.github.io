@@ -177,13 +177,11 @@ function nextRound() {
             stage.innerText = "First stage: Medium";
             randomImageMedium();
             resetTimer();
-            startTimer();
             break;
         case "first stage: medium":
             stage.innerText = "First stage: Hard";
             randomImageHard();
             resetTimer();
-            startTimer();
             break;
         case "first stage: hard":
             stopTimer();
@@ -337,10 +335,10 @@ function shuffleArray(d) {
 }
 
 window.onload = function() {
-    setTimer(2, 0);
+    setTimer(0, 15);
     resetTimer();
     startTimer();
-   //renderTestBody("words");
+   randomImageEasy();
 };
 
 function setTimer(mins, secs) {
@@ -398,19 +396,19 @@ function renderTestBody(test) {
     switch (test) {
         case "words":
             changeTitles(test);
-            writeVideoHtml("test_word");
+            writeVideoHtml("test_word.html");
             break;
         case "video_1":
-            writeVideoHtml("test_video2");
+            writeVideoHtml("test_video2.html");
             changeTitles(test);
             break;
         case "video_2":
-            writeVideoHtml("test_video");
+            writeVideoHtml("test_video.html");
             changeTitles(test);
             break;
         case "video_3":
             changeTitles(test);
-            writeVideoHtml("test_video3");
+            writeVideoHtml("test_video3.html");
             break;
         default:
             break;
