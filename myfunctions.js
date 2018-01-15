@@ -468,6 +468,8 @@ function changePracticeTitles(test) {
 function changeTitles(test) {
     switch (test) {
         case "video_1":
+            $('#myModal').off('show.bs.modal');
+            $('#myModal').off('hide.bs.modal');
             stopTimer();
             var stage = document.getElementById("stage");
             var panelTitle = document.getElementById("panel_title");
